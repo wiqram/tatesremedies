@@ -56,7 +56,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: /mnt/tatesremedies-ghost
+    path: /mnt/tatesremedies
 #  storageClassName: do-block-storage
 #apiVersion: v1
 #kind: PersistentVolume
@@ -136,10 +136,10 @@ spec:
             # - key: config.production.json
             #    path: "./var/lib/ghost/config.production.json"
       containers:
-        - env:
-            - name: url
-              value: https://www.tatesremedies.com
-          image: ghost:latest
+        #- env:
+        #    - name: url
+        #      value: https://www.tatesremedies.com
+        - image: ghost:latest
           #imagePullPolicy: Always
           name: tatesremedies
           ports:
